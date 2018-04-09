@@ -18,11 +18,11 @@
 function mxdiflg(a1, a2) {
   if(!a1.length || !a2.length) return -1;
 
-  let lengthArr_1 = a1.map(a => a.length).sort(function(a,b){return a < b ? -1 : 1});
-  let lengthArr_2 = a2.map(a => a.length).sort(function(a,b){return a < b ? -1 : 1});
+  let lengthArr_1 = a1.map(a => a.length).sort((a,b) => a < b ? -1 : 1 );
+  let lengthArr_2 = a2.map(a => a.length).sort((a,b) => a < b ? -1 : 1 );
 
-  let diff_1 = Math.abs(lengthArr_1[lengthArr_1.length -1] - lengthArr_2[0]);
-  let diff_2 = Math.abs(lengthArr_2[lengthArr_2.length -1] - lengthArr_1[0]);
+  let diff_1 = lengthArr_1[lengthArr_1.length -1] - lengthArr_2[0];
+  let diff_2 = lengthArr_2[lengthArr_2.length -1] - lengthArr_1[0];
 
   return Math.max(diff_1, diff_2);
 
